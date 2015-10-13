@@ -1,0 +1,19 @@
+{
+  "name": "aggredate",
+  "version": "0.0.1",
+  "description": "aggregate and serve temporal data",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/webmapper/aggredate.git"
+  },
+  "author": "Hans Fast",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/webmapper/aggredate/issues"
+  },
+  "homepage": "https://gitlab.com/webmapper/aggredate#README"
+}
