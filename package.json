@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://gitlab.com/webmapper/aggredate/issues"
   },
-  "homepage": "https://gitlab.com/webmapper/aggredate#README"
+  "homepage": "https://gitlab.com/webmapper/aggredate#README",
+  "dependencies": {
+    "express": "^4.13.3",
+    "nconf": "^0.8.2",
+    "pg-promise": "^2.0.10",
+    "rsvp": "^3.1.0"
+  }
 }
