@@ -41,13 +41,8 @@ function getData(req, res) {
 /**
 * @api {get} /buurten Fetch all buurten with data by timerange
 */
-api.get('/buurten', getData);
+api.get('/', getData);
 
-/**
-* @api {get} /buurt Fetch single buurt with data by timerange
-*/
-api.get('/buurt', getData);
-
-api.listen(8090, function() {
-    console.log('Listening on port 8090');
+api.listen(9080, function() {
+    console.log('Listening on port 9080');
 });
