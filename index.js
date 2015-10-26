@@ -21,14 +21,7 @@ var db = pg("postgres://"+opts.user+":"+opts.password+"@"+opts.host+":"+opts.por
 var qu = 'select * from schiedam.stortingen_2015_12 limit 1;';
 
 function getData(req, res) {
-    db.connect()
-    .then(function(obj) {
-        var sco = obj;
-        return sco.query(req.processedQuery.text, req.processedQuery.values);
-    },function(error) {
-        console.log('connection error');
-        console.log(error)
-    })
+    db.many(req.processedQuery.text, req.processedQuery.values)
     .then(function(data) {
         res.setHeader('Content-Type', 'application/json');
         res.send(data);
