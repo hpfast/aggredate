@@ -21,14 +21,7 @@ var db = pg("postgres://"+opts.user+":"+opts.password+"@"+opts.host+":"+opts.por
 var qu = 'select * from schiedam.stortingen_2015_12 limit 1;';
 
 function getData(req, res) {
-    db.connect()
-    .then(function(obj) {
-        var sco = obj;
-        return sco.query(req.processedQuery.text, req.processedQuery.values);
-    },function(error) {
-        console.log('connection error');
-        console.log(error)
-    })
+    db.many(req.processedQuery.text, req.processedQuery.values)
     .then(function(data) {
         res.setHeader('Content-Type', 'application/json');
         res.send(data);
@@ -41,13 +34,8 @@ function getData(req, res) {
 /**
 * @api {get} /buurten Fetch all buurten with data by timerange
 */
-api.get('/buurten', getData);
+api.get('/', getData);
 
-/**
-* @api {get} /buurt Fetch single buurt with data by timerange
-*/
-api.get('/buurt', getData);
-
-api.listen(8090, function() {
-    console.log('Listening on port 8090');
+api.listen(9080, function() {
+    console.log('Listening on port 9080');
 });
